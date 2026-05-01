@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>木材ライフサイクル可視化</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="header-brand">
+    <span class="header-sdw">SDW</span>
+    <div class="header-rule"></div>
+    <div class="header-text">
+      <p class="header-full">Sustainable Digital Wood</p>
+      <p class="header-sub">木材ライフサイクル可視化</p>
+    </div>
+  </div>
+</header>
+
+<div id="app">
+
+  <!-- サイドバー：ステークホルダーフィルター -->
+  <aside id="sidebar">
+    <div id="stakeholder-list"></div>
+    <button id="btn-clear" class="btn-clear">フィルター解除</button>
+  </aside>
+
+  <!-- メインキャンバス -->
+  <main id="main-canvas">
+
+    <!-- モード切り替え -->
+    <div id="mode-toggle">
+      <button class="mode-btn active" id="btn-physical">物理レイヤ</button>
+      <button class="mode-btn" id="btn-info">情報レイヤ</button>
+      <button class="mode-btn" id="btn-human">人物レイヤ</button>
+    </div>
+
+    <svg id="svg-root" width="100%" height="100%"></svg>
+
+    <div id="tooltip"></div>
+
+    <div id="info-panel">フェーズをクリックして詳細を表示</div>
+  </main>
+
+</div>
+
+<!-- D3.js -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+
+<!-- データ -->
+<script src="js/data/phases.js"></script>
+<script src="js/data/stakeholders.js"></script>
+<script src="js/data/connections.js"></script>
+
+<!-- コンポーネント -->
+<script src="js/components/physicalLayer.js"></script>
+<script src="js/components/infoLayer.js"></script>
+<script src="js/components/networkGraph.js"></script>
+<script src="js/components/chordDiagram.js"></script>
+
+<!-- メイン -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
